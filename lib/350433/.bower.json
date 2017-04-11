@@ -1,0 +1,12 @@
+{
+  "name": "350433",
+  "_release": "d6327b3ca7",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d6327b3ca7b7c50d3f4f784e06bac76cf649fe0f"
+  },
+  "_source": "https://gist.github.com/remy/350433.git",
+  "_target": "*",
+  "_originalSource": "https://gist.github.com/remy/350433.git"
+}

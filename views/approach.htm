@@ -1,0 +1,377 @@
+<div class="container gc-section" style="min-height : 0;">
+  <!-- REGIONS / METADATA -->
+  <div class="row">
+    <div class="col-md-5">
+      <section style="margin-top: 0;">
+        <h4 class="subtitle" style="text-transform: uppercase;">Background</h4>
+        <p class="text">
+          <a href="http://www.bioinformatics.deib.polimi.it/genomic_computing/" target="_blank">Genomic Computing</a>
+        </p>
+      </section>
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid gc-section">
+  <div class="container">
+    <section class="m-t-0">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/6hapD19eWgE?rel=0" allowfullscreen></iframe>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<!-- GDM -->
+<div class="container-fluid gc-section gc-image" style="background-image: url('imgs/gdm_bg.jpg'); min-height: 27rem;">
+  <div class="container">
+    <section>
+      <h3 class="title">GENOMETRIC DATA MODEL (GDM)</h3>
+      <h4 class="subtitle">Our Genomic Data model (GDM) provides abstractions for DNA regions and for metadata.</h4>
+    </section>
+  </div>
+</div>
+
+
+<div class="container gc-section">
+  <!-- REGIONS / METADATA -->
+  <div class="row">
+    <div class="col-md-5">
+      <section style="margin-top: 0;">
+        <h4 class="subtitle" style="text-transform: uppercase;">Regions</h4>
+        <p class="text">
+          Regions of the model describe processed data, e.g. <strong>mutations</strong>, <strong>expression</strong> or <strong>regulation</strong>; they have a schema, with 5 common attributes (ID, CHR, LEFT, RIGHT, STRAND) and then arbitrary typed attributes.
+          <strong>They achieve interoperability across a plethora of data formats.</strong>
+        </p>
+      </section>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
+      <section style="margin-top: 0;">
+        <h4 class="subtitle" style="text-transform: uppercase;">Metadata</h4>
+        <p class="text">
+          Meta-data are arbitrary attribute-value pairs, independent from any standardization attempt.
+          They trace the <strong>data provenance</strong>, including <strong>biological</strong> and <strong>clinical</strong> aspects.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <section>
+    <p class="text">
+      Each dataset is modeled as two connected data objects of regions and meta-data; we use structured data for regions (each dataset has a schema) and unstructured data for metadata (arbitrary attribute-value pairs); we expect orders of magnitudes of difference between the cardinality of regions (up to millions) and of metadata (tens to hundreds).
+    </p>
+  </section>
+
+
+  <div class="p-t-3">
+    <figure class="figure">
+      <img class="figure-img img-fluid" src="imgs/region_metadata.jpg" alt="Region and Metadata">
+    </figure>
+  </div>
+
+
+  <section>
+    <h3 class="title" style="text-transform: none;">Example of schemas and instances</h3>
+
+    <div class="text">
+      <h3 class="subtitle">Mutations (DNA-seq)</h3>
+      <pre><code>
+<strong>(id, (chr,start,stop,strand),
+(A,G,C,T,del,ins,inserted,ambig,Max,Error,A2T,A2C,A2G,C2A,C2G,C2T))</strong>
+(1, (chr1,  917179, 917180,*), (0,0,0,0,1,0,’.','.',0,0,0,0,0,0,0,0))
+(1, (chr1,  917179, 917179,*), (0,0,0,0,0,1,G,'.',0,0,0,0,0,0,0,0))
+      </code></pre>
+    </div>
+
+    <h3 class="subtitle">Expression (RNA-seq)</h3>
+      <pre><code>
+<strong>(id, ((chr,start,stop,strand), (source,type,score,frame,geneID,transcriptID,RPKM1,RPKM2,iIDR))</strong>
+(1, (chr8, 101960824, 101964847,-),   ('GencodeV10', 'transcript', 0.026615, NULL, 'ENSG00000164924.11', 'ENST00000418997.1', 0.209968, 0.193078, 0.058))
+      </code></pre>
+    </div>
+
+  </section>
+</div>
+
+
+
+
+
+<!-- GMQL -->
+<div class="container-fluid gc-section gc-darker gc-image" style="background-image: url('imgs/gmql_bg_dark.jpg'); min-height: 27rem;">
+  <div class="container">
+    <section>
+      <h3 class="title">GENOMETRIC QUERY LANGUAGE</h3>
+      <h4 class="subtitle">Genometric query language (GMQL) enables queries over hundreds of datasets and thousands of samples, as the key to genomic “big data” analysis.</h4>
+    </section>
+  </div>
+</div>
+
+
+<div class="container gc-section">
+  <section>
+    <p class="text">
+      GMQL genome-wide queries are able to find interesting regions by combining mutations, expression or regulation experiments. The name
+      GMQL derives by its ability of computing distance-related queries along the genome.
+    </p>
+  </section>
+
+
+  <!-- What is -->
+  <section>
+    <h3 class="title">WHAT IS GMQL</h3>
+    <p class="text">
+      GMQL is a closed algebra over datasets: each operation applies to one or two datasets including many samples; the result of each operation is a new dataset, also including many samples. Thus, operations build new regions and trace the provenance of each resulting sample, by computing the sample metadata. It is inspired by Pig Latin (a language in the Hadoop family) and targeted to cloud.
+    </p>
+
+    <p class="text">Algebraic operations follow the structure:</p>
+    <code class="font-weight-bold" style="font-size: 1.1em;">
+      < variable > = < operator > (< parameters >) < variable >
+    </code>
+  </section>
+
+
+  <section>
+    <h3 class="title">Operations</h3>
+    <p class="text">Classic relational operations - <span class="text-success">With genomic extensions</span></p>
+
+    <div class="bs-tab gc-operations">
+      <ul class="nav nav-tabs" role="tablist" style="display: table;">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Select</a>
+          <div class="dropdown-menu">
+            <a data-toggle="tag" role="tab" href="#op-select" class="dropdown-item active">Sample</a>
+            <a data-toggle="tag" role="tab" href="#op-select2" class="dropdown-item">Region</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-project" class="nav-link">Project</a>
+        </li>
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-group" class="nav-link">Group</a>
+        </li>
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-order" class="nav-link">Order</a>
+        </li>
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-difference" class="nav-link">Difference</a>
+        </li>
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-merge" class="nav-link">Merge</a>
+        </li>
+
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-cover" class="nav-link text-success">Cover</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-success" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
+          <div class="dropdown-menu">
+            <a data-toggle="tag" role="tab" href="#op-join" class="dropdown-item text-success">Sample</a>
+            <a data-toggle="tag" role="tab" href="#op-join2" class="dropdown-item text-success">Region</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-toggle="tag" role="tab" href="#op-map" class="nav-link text-success">Map</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="op-select" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Selection of the samples</p>
+          <p class="text">Select patients younger than 70 years.</p>
+          <img src="imgs/operations/select.gif" alt="Select" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-select2" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Selection of the regions</p>
+          <p class="text">Select those regions which have a score greater than 0.5</p>
+          <img src="imgs/operations/select-region.gif" alt="Region Select" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-project" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Projection of regions</p>
+          <p class="text">For each gene in a set, take its promoter (e.g. from -2kbp, to +2kbp from the TSS).</p>
+          <img src="imgs/operations/project.gif" alt="Project" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-group" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Group by metadata</p>
+          <p class="text">Group samples according to the value of tumor and compute the minimum score of each group.</p>
+          <img src="imgs/operations/group.gif" alt="Group" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-order" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Order and select top K</p>
+          <p class="text">Order by <code>region_count</code> metadata and take the top two samples.</p>
+          <img src="imgs/operations/order.gif" alt="Order" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-difference" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Region difference</p>
+          <p class="text">Return all the regions in the first dataset that do not overlap any region in the second one.</p>
+          <img src="imgs/operations/difference.gif" alt="Difference" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-merge" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Region merge</p>
+          <p class="text">Collapse several samples (both region and metadata) into an unique one.</p>
+          <img src="imgs/operations/merge.gif" alt="Merge" class="img-fluid">
+        </div>
+
+        <!-- GENOMIC -->
+        <div class="tab-pane" id="op-cover" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Cover(2,ANY)</p>
+          <p class="text">Find portions of the genome that are covered by at least two regions.</p>
+          <img src="imgs/operations/cover.gif" alt="Cover" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-join" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Metadata join</p>
+          <p class="text">Metadata join: select pairs of matching samples (e.g. with the same "Type").</p>
+          <img src="imgs/operations/join.gif" alt="Metadata Join" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-join2" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Join at min-distance</p>
+          <p class="text">Associate each region in the former dataset with the closest in the latter.</p>
+          <img src="imgs/operations/join-region.gif" alt="Region Join" class="img-fluid">
+        </div>
+        <div class="tab-pane" id="op-map" role="tabpanel">
+          <p class="lead font-weight-bold m-b-0">Region map</p>
+          <p class="text">Compute an aggregate function (e.g. COUNT) on all the regions intersecting the reference</p>
+          <img src="imgs/operations/map.gif" alt="Map" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="container-fluid gc-section bg-faded p-t-1 p-b-2 m-b-0">
+  <div class="container">
+    <!-- DISCOVER MORE ABOUT THE USE OF GMQL: GENOME SPACE ABSTRACTION -->
+    <section>
+      <h3 class="title">GENOME SPACE ABSTRACTION</h3>
+      <div class="p-t-1">
+        <figure class="figure">
+          <img class="figure-img img-fluid" src="imgs/space_abstraction.png" alt="Space abstraction">
+        </figure>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="container gc-section">
+  <section>
+    <h3 class="title p-b-2">REPOSITORY</h3>
+    <div class="row text">
+      <div class="col-md-4">
+        <h4 class="subtitle" style="text-transform: uppercase;">ENCODE</h4>
+        providing more than 4000 processed datasets for humans and mice, relevant to epigenomic research.
+      </div>
+      <div class="col-md-4">
+        <h4 class="subtitle" style="text-transform: uppercase;">Epigenomics Roadmap</h4>
+        providing about 1000 human epigenomic datasets for stem cells and ex-vivo tissues.
+      </div>
+      <div class="col-md-4">
+        <h4 class="subtitle" style="text-transform: uppercase;">TCGA
+          <small style="text-transform: none;">(The Cancer Genome Atlas)</small>
+        </h4>
+        providing more than 50,000 processed datasets for more than 30 cancer types, including mutations, copy number variations, gene and miRNA expressions, methylations.
+      </div>
+    </div>
+    <div class="p-t-3 text-xs-center">
+      <figure class="figure">
+        <img class="figure-img img-fluid" src="imgs/repository.jpg" alt="Repository">
+      </figure>
+    </div>
+  </section>
+
+
+
+  <section>
+    <h3 class="title">TRY GMQL</h3>
+
+    <div class="row m-t-3">
+      <div class="col-md-4">
+        <a target="_blank" href="http://www.bioinformatics.deib.polimi.it/genomic_computing/GMQL/" class="btn btn-secondary">GMQL</a>
+
+        <div class="text m-t-2" style="font-size: 0.8rem">
+          <span class="font-weight-bold" style="font-size: 1rem;">Includes</span>:
+          <ul class="p-l-0">
+            <li>Local mode or MapReduce mode (over Hadoop, or Hadoop YARN) for GNU/Linux systems<br>Download (122 MB)</li>
+            <li>Web services (over Hadoop YARN)<br>Download (60 MB)</li>
+            <li>Quick start - Install GMQL and get started</li>
+            <li>GMQL tutorial & Complete documentation</li>
+            <li>Functional comparison with BEDTools & BEDOPS</li>
+            <li>Pointer to publication on the Bioinformatics journal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <a target="_blank" href="http://www.bioinformatics.deib.polimi.it/GMQL/queries/" class="btn btn-secondary">GMQL queries</a>
+
+        <div class="text m-t-2" style="font-size: 0.8rem">
+          <span class="font-weight-bold" style="font-size: 1rem;">Includes</span>:
+          <ul class="p-l-0">
+            <li>User-friendly interface to creating/managing GMQL queries</li>
+            <li>Custom queries and ENCODE / Roadmap Epigenomics datasets</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <a target="_blank" href="http://www.bioinformatics.deib.polimi.it/GMQL/interfaces/" class="btn btn-secondary">GMQL interfaces</a>
+
+        <div class="text m-t-2" style="font-size: 0.8rem">
+          <span class="font-weight-bold" style="font-size: 1rem;">Includes</span>:
+          <ul class="p-l-0">
+            <li>web interface where bioinformaticians can browse the datasets of genomic features and biological/clinical metadata and build GMQL queries upon them</li>
+            <li>processed data from ENCODE, Roadmap Epigenomic public sources (open, anonymized data for secondary use)</li>
+            <li>future availability of processed data TCGA and of user-friendly services for biologists</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section>
+    <h3 class="title">SYSTEM ARCHITECTURE</h3>
+    <p class="text">
+      Our holistic data management system for genomics uses cloud-based computing for querying thousands of heterogeneous datasets several integrated components for data management.
+    </p>
+    <img class="img-fluid m-t-3" src="imgs/architecture.png" alt="System architecture" style="max-height: 330px;">
+  </section>
+</div>
+
+<div class="container gc-section" style="padding-top: 0.1rem;">
+  <section>
+    <h3 class="title m-b-3">GMQL IMPLEMENTATIONS</h3>
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="text">
+          <h4 class="subtitle" style="text-transform: uppercase;">V1: First Implementation<br><small class="text-muted">Pig</small></h4>
+          The first prototype implementation uses the Pig data engine under Hadoop 1.
+        </div>
+      </div>
+      <div class="col-md-2 text-xs-center">
+        <h3><i class="fa fa-chevron-right hidden-sm-down"></i></h3>
+        <h3><i class="fa fa-chevron-down hidden-md-up"></i></h3>
+      </div>
+      <div class="col-md-5">
+        <div class="text">
+          <h4 class="subtitle" style="text-transform: uppercase;">V2: Second implementation<br><small class="text-muted">Flink, Spark, SciDB</small></h4>
+          The second implementation uses an intermediate representation and then uses the Flink, Spark and SciDB data engines under Hadoop 2 and Yarn.
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+
+

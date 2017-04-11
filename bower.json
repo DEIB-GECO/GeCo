@@ -1,0 +1,30 @@
+{
+  "name": "genomica",
+  "description": "Genomic website",
+  "main": "",
+  "authors": [
+    "Volox"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "350433": "https://gist.github.com/remy/350433.git",
+    "jquery": "^2.2.3",
+    "bootstrap": "v4.0.0-alpha.3",
+    "tether": "^1.3.2",
+    "normalize-css": "^4.1.1",
+    "font-awesome": "fontawesome#^4.6.2",
+    "es6-promise": "^3.2.1",
+    "fetch": "^1.0.0",
+    "modernizr": "^3.3.1",
+    "jquery-sticky": "sticky#^1.0.3"
+  }
+}

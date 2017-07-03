@@ -400,3 +400,7 @@ footer .contact-map {
     margin-bottom: 0rem !important;
     opacity: 0.7;
 }
+
+.collapse.in {
+  display: inline !important;
+}

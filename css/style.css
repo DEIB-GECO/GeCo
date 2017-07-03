@@ -344,7 +344,7 @@ footer {
   padding-bottom: 1rem;
 }
 footer .contact-info h3 {
-  
+
 }
 footer .contact-info {
   font-size: 0.9rem;
@@ -392,7 +392,7 @@ footer .contact-map {
   footer .contact-data {
     display: flex;
     align-items: center;
-  } 
+  }
 }
 /*# sourceMappingURL=style.css.map */
 
@@ -403,4 +403,8 @@ footer .contact-map {
 
 .collapse.in {
   display: inline !important;
+}
+
+.seminar_paragraph{
+    text-align:justify
 }

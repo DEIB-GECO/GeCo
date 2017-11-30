@@ -290,8 +290,10 @@ a.pdf::after {
 .team-collaborators {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 55rem;
+  margin: 0 auto;
 }
 .team-collaborators .team {
   max-width: 12rem;

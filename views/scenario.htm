@@ -80,3 +80,129 @@
 
 
 </div>
+
+
+<div class="container-fluid gc-section gc-image" style="background-image: url('imgs/next_bg.jpg'); min-height: 27rem; background-position-y: 0;">
+  <div class="container">
+    <section>
+      <h1 class="title">WORKPLAN</h1>
+      <h2 class="subtitle">GeCo project in a nutshell</h2>
+    </section>
+  </div>
+</div>
+
+
+<!-- Short -->
+<div class="container gc-section">
+  <section class="phase">
+    <header>
+      <h3 class="title">SHORT TERM:</h3>
+      <h4 class="subtitle">Extend the Data Model and Language</h4>
+    </header>
+
+    <div class="text">
+      <h2 class="subtitle">Pattern-Based Mining and Interaction</h2>
+      we will construct user-friendly interfaces for visually defining queries which search patterns by using the
+      genomic signals over existing samples loaded in a genome browser, enabling
+      the formulation of a similarity query searching for similar patterns throughout
+      the genome.
+    </div>
+
+    <div class="text">
+      <h2 class="subtitle">Clustering Design</h2>
+      We will study ways of applying classic clustering and bi-
+      clustering methods to query results, enabling arbitrary choices of clustering
+      dimensions and the use of new metrics which are based upon functional aspects.
+    </div>
+
+    <div class="text">
+      <h2 class="subtitle">Integration with Descriptive Statistics</h2>
+      We will study how to provide
+      summaries describing result samples, especially useful when results are big.
+      We will also integrate classic significance or regression tests, by means of
+      query sub-structuring so as to define both the phenomena which should be
+      statistical characterized and the background required for statistical measures, together with experts in the domain of statistical sciences.
+    </div>
+
+    <div class="text">
+      <h2 class="subtitle">Integration with Data Analysis</h2>
+      as we observed that most biological problems require ad-hoc data analysis following data extraction, we will study the data analysis methods which are commonly used and in such case we will bridge them to data extraction. Given the many options, this work will be conducted bottom-up and with a problem-driven approach, considering the problems of WP6.
+    </div>
+
+    <div class="text">
+      <h2 class="subtitle">Bringing genomic computing to the cloud</h2>
+      We will target open-source cloud computing environments that take advantage of wide developer communities, so that our domain-specific work will leverage the general progress of cloud computing. We will study the optimal way of parallelizing operations and assigning them to computing nodes, describing inter- and intra-operation optimizations, looking at chains of operations - as these may lead to important ways of improving data staging during run-time execution optimization.
+    </div>
+  </section>
+</div>
+
+
+<!-- Mid -->
+<div class="container gc-section">
+  <section class="phase">
+    <header>
+      <h3 class="title">MID TERM:</h3>
+      <h4 class="subtitle">Support data federation and integration</h4>
+    </header>
+
+    <div class="text">
+      <h2 class="subtitle">Federated database solutions</h2>
+      We will provide the required abstractions and technological solutions for improving the cooperation of research or clinical organizations. Nodes of cooperating organizations will be connected to form a federated database; in such systems, queries move from a requesting node to a remote note, are locally executed, and results are communicated back to the requesting node; this paradigm allows for distributing the processing to data, while each research center will keep data ownership.
+    </div>
+
+    <div class="text">
+      <h2 class="subtitle">Integrated access to large data sources</h2>
+      We will provide an unified access to the new repositories of processed NGS data which are being created by worldwide consortia. This requires breaking barriers which depend both on data semantics and data access, so this work requires both ontological integration and new interaction protocols.
+      We integrate public data available for secondary access, from Consortia such as
+      <ul class="p-l-1 m-t-1">
+        <li class="text">Encyclopedia of DNA elements (ENCODE)</li>
+        <li class="text">The Cancer Genome Atlas (TCGA)</li>
+        <li class="text">1000 Genomes Project</li>
+        <li class="text">Roadmap Epigenomics</li>
+      </ul>
+      We will establish the appropriate conceptual relationships between the metadata which are present at the various sources, by means of ontological reasoning over consolidated ontologies, such as the Unified Medical Language System (UMLS)
+    </div>
+
+    <div class="text">
+      <h2 class="subtitle">Web services for specific biological needs</h2>
+      In GeCo we will provide services which will be implemented as custom queries over the integrated repositories, improving over the current state-of-the-art of biological services. All the processed data available in the above data sources will be provided of metadata and integrated; it will be possible to provide input samples to the GeCo services, whose privacy will be protected; limited amount of staging for limited time will be available, for supporting deferred retrieval. A simple protocol will facilitate input and output file transmissions, and it will also be possible to visualize results on genome browsers or to selectively retrieve regions or metadata.
+    </div>
+  </section>
+</div>
+
+
+<!-- Long -->
+<div class="container gc-section">
+  <section class="phase">
+    <header>
+      <h3 class="title">LONG TERM:</h3>
+      <h4 class="subtitle">Search methods and Internet of Genomes</h4>
+    </header>
+
+    <div class="text">
+      We will evolve the integrated data and knowledge sources into an Internet of Genomes, i.e. an ecosystem of interconnected repositories made available to the scientists’ community. The dream is to offer single points of access to world-wide available genomic knowledge, by leveraging on new services, including metadata indexing and domain-specific crawlers, towards the vision of Google-like systems supporting keyword-based and region-based queries for finding genome data of interest available world-wide, by using large storage systems and techniques such as indexing and crawling.
+      The most ambitious and challenging vision considered in this WP is building a search system upon an internet of genomes. There are two intertwined problems:
+
+      <div class="m-t-1">
+        <div class="font-weight-bold">Metadata search</div>
+        <div>We will support keyword-based search or free text querying. Search methods will locate relevant samples within very large bodies, using classical measures of precision and recall.</div>
+      </div>
+      <div class="m-t-1">
+        <div class="font-weight-bold">Feature-based region search</div>
+        <div>We will provide best-matching regions with user-specified features, when such features may not be available in the schema. For some regions (e.g., known genes) it is possible to define a priori the typical features, store them as attributes, and then use indexing. We envision general search mechanisms where the user selects interesting regions, then provides information about the features of interest, then we compute those features, and finally we order regions based on their computed features and present them to the user. So, search and feature evaluation have to intertwine in a clever way.</div>
+      </div>
+
+
+      <del>
+
+        <dl>
+          <dt class="col-sm-3">Metadata search</dt>
+          <dd class="col-sm9">We will support keyword-based search or free text querying. Search methods will locate relevant samples within very large bodies, using classical measures of precision and recall.</dd>
+
+          <dt class="col-sm-3">Feature-based region search</dt>
+          <dd class="col-sm9">We will provide best-matching regions with user-specified features, when such features may not be available in the schema. For some regions (e.g., known genes) it is possible to define a priori the typical features, store them as attributes, and then use indexing. We envision general search mechanisms where the user selects interesting regions, then provides information about the features of interest, then we compute those features, and finally we order regions based on their computed features and present them to the user. So, search and feature evaluation have to intertwine in a clever way.</dd>
+        </dl>
+      </del>
+    </div>
+  </section>
+</div>

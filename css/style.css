@@ -208,6 +208,13 @@ a.pdf::after {
   text-rendering: auto;
   content: " \f1c1";
 }
+
+a.video::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  content: " \f1c8";
+}
+
 .article-item .article-title {}
 .article-item .article-magazine {
   font-weight: bold;

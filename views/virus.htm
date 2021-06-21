@@ -2,32 +2,53 @@
 <div class="container-fluid gc-section">
     <div class="container">
 
-        Inspired by our work on genomic data integration,
-        during the outbreak of the COVID-19 pandemic we searched for effective ways to help mitigate its effects
-        with our contribution; we were able to successfully re-apply the data-driven paradigm used for human genomics.
-        <br>
-        Even if the domain of viral genomics is completely new, it presents many analogies with our previous challenges.
-        Here we model viral nucleotide sequences as strings of letters,
-        with corresponding sub-sequences -- the genes -- that encode for amino acid proteins.
-        <br>
-        Aspects related to the technology, biology, and organization of viral sequencing are also reported. The model
-        has set the basis for a rich stream of research that applies data-driven methods to practically support virology
-        research. Within a large data warehouse, we integrate sequences with their metadata from a variety of different
-        sources; we make it searchable through the ViruSurf (<a href="http://www.gmql.eu/virusurf/">http://www.gmql.eu/virusurf/</a>)
-        search interface, allowing to extract sequences based on
-        their combined mutations, to compare different conditions, and to build interesting populations for downstream
-        analysis.
-        To such search system, we associate a powerful data visualization application called VirusViz (<a
-            href="http://www.gmql.eu/virusviz/">http://www.gmql.eu/virusviz/</a>),
-        which
-        receives the results of queries and provides metadata summarization, variant descriptions, and variant
-        visualization. VirusViz offers a rich customization and the possibility of grouping and comparatively analyzing
-        populations of interest (allowing, for instance, to trace new variants since their starting dates in a precise
-        location).
-        Several other systems are currently under development.
-        <br>
-        <br>
 
+        Inspired by our work on genomic data integration, after the outbreak of the COVID-19 pandemic we turned our
+        attention to the analysis and management of viral sequences, aiming at re-applying the data-driven paradigm used
+        for human genomics.
+
+        <br><br>
+        The GeCo approach to the domain of viral genomics presents many analogies with our previous approach to human
+        genomics.
+        <br><br>
+        We observed the need for data integration across heterogeneous sources collecting viral sequences, we thus
+        modeled a consensus conceptual schema for both metadata and sequence properties (mutations of viral sequences
+        resulting into changes of the amino-acids forming proteins) and we built search systems over sequence
+        repositories, with powerful data visualization tools.
+        <br><br>
+
+        Results include:
+        <br>
+        <ul>
+            <li>the Viral Conceptual Model (VCM); describing sequences with their annotations, nucleotide mutations and
+                amino
+                acid changes; aspects related to the technology, biology, and organization of viral sequencing are also
+                reported. The model
+                has set the basis for a rich stream of research that applies data-driven methods to practically support
+                virology
+                research.
+            </li>
+            <li>Within a large data warehouse, we integrate sequences with their metadata from a variety of different
+                sources;
+                we make it searchable through the ViruSurf (<a href="http://www.gmql.eu/virusurf/" target="_blank"
+                                                               rel="noopener noreferrer">http://www.gmql.eu/virusurf/</a>)
+                search interface, supporting the
+                extraction of sequences based on their combined mutations, to compare different conditions, and to build
+                interesting populations for downstream analysis.
+            </li>
+            <li>To such search system, we associate a powerful data visualization application called VirusViz
+                (<a href="http://www.gmql.eu/virusviz/" target="_blank" rel="noopener noreferrer">http://www.gmql.eu/virusviz/</a>),
+                which receives the
+                results of queries and provides metadata summarization,
+                variant descriptions, and variant visualization. VirusViz offers a rich customization and the
+                possibility of
+                grouping and comparatively analyzing populations of interest (allowing, for instance, to trace new
+                variants
+                since their starting dates in a precise location).
+            </li>
+        </ul>
+        Several other systems are currently under development.
+        <br><br>
         <h3>VIRAL GENOMICS PUBLICATIONS</h3>
 
         <ul class="publications">
@@ -38,7 +59,8 @@
                     variants</strong>
                 Nucleic Acids Research, 2021.
                 DOI: 10.1093/nar/gkab478
-                <a target="_blank" href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkab478/6295540">Publisher's link</a>
+                <a target="_blank" href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkab478/6295540">Publisher's
+                    link</a>
                 -
                 <a target="_blank" class="pdf" href="publications/gkab478-virusviz.pdf">pdf</a>
             </li>
@@ -46,7 +68,7 @@
             <!--RCIS2021-->
             <li>
                 <em>Al Khalaf R., Alfonsi T., Ceri S., Bernasconi A.</em>
-                <strong>CoV2K: a Knowledge Base of SARS-CoV-2 Variant Impacts</strong>
+                <strong>CoV2K: a Knowledge Base of SARS-CoV-2 Variant Impacts</strong>.
                 In: Cherfi S., Perini A., Nurcan S. (eds) Research Challenges in Information Science. RCIS 2021. Lecture
                 Notes in Business Information Processing, vol 415. Springer, Cham.
                 DOI: 10.1007/978-3-030-75018-3_18
@@ -59,7 +81,7 @@
             <!--REFSQ2021-->
             <li>
                 <em>Bernasconi A.</em>
-                <strong>Extreme Requirements Elicitation: Lessons Learnt from the COVID-19 Case Study</strong>
+                <strong>Extreme Requirements Elicitation: Lessons Learnt from the COVID-19 Case Study</strong>.
                 In the Joint Proceedings of the Co-Located Events of the International Working Conference on Requirement
                 Engineering: Foundation for Software Quality (REFSQ2021). CEUR Workshop Proceedings 2857, CEUR-WS.org
                 2021.
@@ -71,7 +93,7 @@
             <!--VIRUSURF-->
             <li>
                 <em>Canakoglu A., Pinoli P., Bernasconi A., Alfonsi T., Melidis D.P., Ceri S.</em>
-                <strong>ViruSurf: an integrated database to investigate viral sequences</strong>
+                <strong>ViruSurf: an integrated database to investigate viral sequences</strong>.
                 Nucleic Acids Research, Volume 49, Issue D1, 8 January 2021, Pages D817–D824.
                 DOI: 10.1093/nar/gkaa846
                 <a target="_blank" href="https://academic.oup.com/nar/article/49/D1/D817/5921283">Publisher's link</a>
@@ -83,7 +105,7 @@
             <li>
                 <em>Bernasconi A., Canakoglu A., Masseroli M., Pinoli P., Ceri S.</em>
                 <strong>A review on viral data sources and search systems for perspective mitigation of
-                    COVID-19</strong>
+                    COVID-19</strong>.
                 Briefings in Bioinformatics, Volume 22, Issue 2, March 2021, Pages 664–675.
                 DOI: 10.1093/bib/bbaa359.
                 <a target="_blank" href="https://doi.org/10.1093/bib/bbaa359">Publisher's link</a>
@@ -94,7 +116,7 @@
             <!--ER 2020-->
             <li>
                 <em>Bernasconi A., Canakoglu A., Pinoli P., Ceri S.</em>
-                <strong>Empowering Virus Sequence Research through Conceptual Modeling</strong>
+                <strong>Empowering Virus Sequence Research through Conceptual Modeling</strong>.
                 In: Dobbie G., Frank U., Kappel G., Liddle S.W., Mayr H.C. (eds) Conceptual Modeling. ER 2020. Lecture
                 Notes
                 in Computer Science, vol 12400. Springer, Cham.

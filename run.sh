@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-echo "starting on localhost:12345"
-open http://localhost:12346
-python -m http.server 12346
+echo "starting on localhost:12347"
+open http://localhost:12347
+python -m http.server 12347
